@@ -37,11 +37,17 @@ img {
 	margin: 0;
 }
 
-.xo_text {
+.xo_text, .move_players {
 	text-align: center;
 	font-family: Helvetica;
 	font-size: 3vh;
 	color: white;
+}
+
+.move_players {
+	background-color: #74C4EF;
+	padding: 0.2vh;
+	width: 3.5vh;
 }
 
 article {

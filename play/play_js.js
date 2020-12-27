@@ -5,7 +5,7 @@ $(function() {
 	for (let i=1; i<=fieldSize*fieldSize; i++) {
 		$('article').append("<a href=\"#\" draggable=\"false\" class=\"box_" + i + " box\"> </a>");
 	}
-	$('article').css({"grid-template-columns" : "repeat(" + fieldSize + ", 1fr)"});
+	$('article').css({"grid-template-columns" : "repeat(" + fieldSize + ", 1fr)", "grid-gap" : (fieldSize > 20)? 1 : 2/fieldSize + "vh"});
 	$('article * ').css({"font-size" : + 70/fieldSize + "vh"});
 
 
@@ -22,6 +22,7 @@ $(function() {
 		if ($('.'+resultClassBox).text()!='X' && $('.'+resultClassBox).text()!='O' && winPlayer==2) {			//Провірка чи нема в не заняте поле
 			$('.'+resultClassBox).html(typePlayers[movePlayers]);
 			movePlayers = 1-movePlayers;
+			$('.move_players').html(typePlayers[movePlayers]);
 		}
 
 
@@ -66,14 +67,22 @@ $(function() {
 				}
 			}
 		}
-		if (winPlayer==0 || winPlayer==1) {
-			var restart = confirm("Победил : " + typePlayers[winPlayer] + "\n Начать сначала?");
-			if (restart==true) {
-				for (var i=1; i<=fieldSizeVector; i++) {
+		setInterval(function() {
+			if (winPlayer==0 || winPlayer==1) {
+				var restart = confirm("Победил : " + typePlayers[winPlayer] + "\n Начать сначала?");
+				if (restart==true) {
+					for (var i=1; i<=fieldSizeVector; i++) {
+						$('.box_'+i).html(" ");
+						winPlayer=2;
+					}
+				}
+			}
+		} ,1);
+		$('.restart_button').click(function() {
+			for (var i=1; i<=fieldSizeVector; i++) {
 					$('.box_'+i).html(" ");
 					winPlayer=2;
 				}
-			}
-		}
+		})
 	})
 })

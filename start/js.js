@@ -18,6 +18,7 @@ $(function () {
 	})
 
 	var game_mode = 1;
+	$('.mode_game_XO').css({"background-color":"#9EDBFC"});
 	$('.mode_game_XO').click(function() {
 		game_mode = 1;
 		$('.mode_game_XO').css({"background-color":"#9EDBFC"});
@@ -34,8 +35,29 @@ $(function () {
 		$('.win_combination_result').html(win_combination);
 		localStorage.field_size = field_size;
 		localStorage.win_combination = win_combination;
+		localStorage.mode_game = game_mode;
 	})
 
+	$('.reday_game_1').click(function() {
+		localStorage.field_size = 3;
+		localStorage.win_combination = 3;
+		localStorage.mode_game = 1;
+		$(location).attr('href', "..\\play\\play.html")
+	})
+
+	$('.reday_game_2').click(function() {
+		localStorage.field_size = 10;
+		localStorage.win_combination = 4;
+		localStorage.mode_game = 1;
+		$(location).attr('href', "..\\play\\play.html")
+	})
+
+	$('.reday_game_3').click(function() {
+		localStorage.field_size = 19;
+		localStorage.win_combination = 5;
+		localStorage.mode_game = 1;
+		$(location).attr('href', "..\\play\\play.html")
+	})
 
 	$('.play').click(function() {
 		

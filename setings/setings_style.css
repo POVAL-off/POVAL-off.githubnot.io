@@ -1,9 +1,7 @@
 body {
 	--basik-color:#63BDED;
 	--hover-color:#7CCAF3;
-	--seconds-color:#6BC2F1;
 }
-
 
 * {
 	padding: 0px;
@@ -14,21 +12,21 @@ a {
 	text-decoration: none;
 }
 
-a:hover {
-	background-color:var(--hover-color, #7CCAF3);
+header a:hover {
+	background-color: var(--hover-color, #7CCAF3);
 }
 
 .all {
 	width: 80vh;
 	margin: auto;
 	display: grid;
-	grid-gap: 4vh;
+	grid-gap: 2vh;
 }
 
 header {
 	display: flex;
 	justify-content: space-between;
- 	background-color:var(--basik-color, #63BDED);
+ 	background-color: var(--basik-color, #63BDED);
  	width: 80vh;
  	margin: auto;
  	padding:2vh;
@@ -44,28 +42,27 @@ img {
 	margin: 0;
 }
 
-.xo_text {
+.xo_text{
 	text-align: center;
 	font-family: Helvetica;
 	font-size: 3vh;
 	color: white;
 }
 
-article	{
+.theme_setings {
 	display: grid;
-	grid-template-rows: repeat (3 1fr);
-	grid-gap: 3vh;
+	grid-template-columns: 0.2fr repeat(5, 0.1fr) 1.8fr;
+	background-color: var(--basik-color, #63BDED);;
+	padding: 2vh;
 }
 
-article * {
-	background-color: var(--basik-color, #63BDED);
-	padding: 2.5vh;
-	text-align: center;
+.theme_setings a:hover {
+	border: 0.5vh solid #7CCAF3;
+}
+
+.theme_setings_text {
+	text-align: right;
 	font-family: Helvetica;
 	font-size: 3vh;
 	color: white;
-}
-
-article > div {
-	background-color: var(--seconds-color, #6BC2F1);
 }

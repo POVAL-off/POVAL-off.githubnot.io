@@ -1,4 +1,14 @@
 $(function() {
+
+	var themeOptionBasikColor = localStorage.themeOptionBasikColor;
+	var themeOptionHoverColor = localStorage.themeOptionHoverColor;
+	var themeOptionSecondsColor = localStorage.themeOptionSecondsColor;
+	var body = document.getElementsByTagName('body')[0];
+	body.style.cssText = "--basik-color : " + themeOptionBasikColor;
+	body.style.cssText += "--hover-color : " + themeOptionHoverColor;
+
+
+
 	var fieldSize = Number(localStorage.field_size);
 	var winCombination = Number(localStorage.win_combination);
 	var numPlayers = Number(localStorage.mode_game)+1;
@@ -13,7 +23,7 @@ $(function() {
 
 
 	var fieldSizeVector = fieldSize*fieldSize;
-	var typePlayers = ['X','O','+'];
+	var typePlayers = ['X','O','+','-'];
 	var movePlayers = 0;
 	var winPlayer = 0;
 
@@ -39,7 +49,7 @@ $(function() {
 						break;
 					if (k==winCombination+i-1) {
 						for(var k=i; k<winCombination+i; k++)
-							$('.box_'+k).css({"background-color":"#5EAFDA"});
+							$('.box_'+k).css({"background-color":themeOptionSecondsColor});
 						winPlayer = j;
 					}
 				}
@@ -50,7 +60,7 @@ $(function() {
 						break;
 					if (k==((winCombination-1)*fieldSize)+i) {
 						for (var k=i; k<=((winCombination-1)*fieldSize)+i; k=k+fieldSize)
-							$('.box_'+k).css({"background-color":"#5EAFDA"});
+							$('.box_'+k).css({"background-color":themeOptionSecondsColor});
 						winPlayer = j;
 					}
 				}
@@ -64,7 +74,7 @@ $(function() {
 						break;
 					if (k==((fieldSize*(winCombination-1))+winCombination-1)+i) {
 						for (var k=i; k<=((fieldSize*(winCombination-1))+winCombination-1)+i; k=k+fieldSize+1) 
-							$('.box_'+k).css({"background-color":"#5EAFDA"});
+							$('.box_'+k).css({"background-color":themeOptionSecondsColor});
 						winPlayer = j;
 					}
 				}
@@ -77,7 +87,7 @@ $(function() {
 					if (k==(fieldSize*(winCombination-1)+i)) {
 						winPlayer = j;
 						for (var k=(i+winCombination-1); k<=(fieldSize*(winCombination-1)+i); k=k+(fieldSize-1)) 
-							$('.box_'+k).css({"background-color":"#5EAFDA"});
+							$('.box_'+k).css({"background-color":themeOptionSecondsColor});
 					}
 				}
 			}
@@ -88,7 +98,7 @@ $(function() {
 				if (restart==true) {
 					for (var i=1; i<=fieldSizeVector; i++) {
 						$('.box_'+i).html(" ");
-						$('.box_'+i).css({"background-color":"#63BDED"});
+						$('.box_'+i).css({"background-color":themeOptionBasikColor});
 						winPlayer=0;
 					}
 				}
@@ -97,6 +107,7 @@ $(function() {
 		$('.restart_button').click(function() {
 			for (var i=1; i<=fieldSizeVector; i++) {
 					$('.box_'+i).html(" ");
+					$('.box_'+i).css({"background-color":themeOptionBasikColor});
 					winPlayer=0;
 				}
 		})

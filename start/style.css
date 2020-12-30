@@ -1,3 +1,9 @@
+body {
+	--basik-color:#63BDED;	/*63BDED   5FDD77*/
+	--hover-color:#7CCAF3;	/*7CCAF3   7BE48F*/
+	--seconds-color:#3B3B3B; /*6BC2F1   6EDE83*/
+}
+
 * {
 	padding: 0px;
 	margin: 0px;
@@ -8,7 +14,7 @@ a {
 }
 
 a:hover {
-	background-color:#7CCAF3;
+	background-color:var(--hover-color, #7CCAF3);
 }
 
 .all {
@@ -21,7 +27,7 @@ a:hover {
 header {
 	display: flex;
 	justify-content: space-between;
- 	background-color:#63BDED;
+ 	background-color:var(--basik-color, #63BDED);
  	width: 80vh;
  	margin: auto;
  	padding:2vh;
@@ -52,7 +58,7 @@ article {
 
 article * {
 	padding: 2vh;
-	background-color:#63BDED;
+	background-color:var(--basik-color, #63BDED);
 	color: #fff;
 	text-align: center;
 	font-family: Helvetica;
@@ -69,23 +75,23 @@ article * {
 }
 
 .castomizable_game * {
-	background-color:#63BDED;
+	background-color:var(--basik-color, #63BDED);
 	font-size: 2vh;
 }
 
 .mode_game {
 	grid-column: 1/4;
 	display: grid;
-	grid-template-columns: 1fr 1fr;
-	width: 17vh;
+	grid-template-columns: 1fr 1fr 1fr;
+	width: 26vh;
 	padding: 0px;
 }
 
 .mode_game * {
 	padding: 0.5vh;
 	font-size: 1.5vh;
-	background-color:#79C8F2;
-	border: 0.3vh solid #63BDED;
+	background-color:var(--seconds-color, #6BC2F1);
+	border: 0.3vh solid var(--basik-color, #63BDED);
 }
 
 .field_size {
@@ -94,7 +100,7 @@ article * {
 }
 
 .field_size * {
-	background-color: #6BC2F1;
+	background-color: var(--seconds-color, #6BC2F1);
 }
 
 .play {
@@ -107,5 +113,5 @@ article * {
 }
 
 .win_combination_num * {
-	background-color: #6BC2F1;
+	background-color: var(--seconds-color, #6BC2F1);
 }

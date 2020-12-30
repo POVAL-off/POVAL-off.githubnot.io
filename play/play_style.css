@@ -1,3 +1,8 @@
+body {
+	--basik-color:#63BDED;
+	--hover-color:#7CCAF3;
+}
+
 * {
 	padding: 0px;
 	margin: 0px;
@@ -8,7 +13,7 @@ a {
 }
 
 a:hover {
-	background-color:#7CCAF3;
+	background-color: var(--hover-color, #7CCAF3);
 }
 
 .all {
@@ -21,7 +26,7 @@ a:hover {
 header {
 	display: flex;
 	justify-content: space-between;
- 	background-color:#63BDED;
+ 	background-color: var(--basik-color, #63BDED);
  	width: 80vh;
  	margin: auto;
  	padding:2vh;
@@ -45,7 +50,7 @@ img {
 }
 
 .move_players {
-	background-color: #74C4EF;
+	background-color: var(--hover-color, #7CCAF3);
 	padding: 0.2vh;
 	width: 3.5vh;
 }
@@ -58,7 +63,7 @@ article {
 }
 
 article * {
-	background-color:#63BDED;
+	background-color: var(--basik-color, #63BDED);
 	text-align: center;
 	font-family: Helvetica;
 	font-size:1vh;
@@ -66,5 +71,5 @@ article * {
 }
 
 .box:hover {
-	background-color: #74C4EF;
+	background-color: var(--hover-color, #7CCAF3);
 }

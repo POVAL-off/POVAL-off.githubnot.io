@@ -1,4 +1,15 @@
 $(function () {
+
+	var themeOptionBasikColor = localStorage.themeOptionBasikColor;
+	var themeOptionHoverColor = localStorage.themeOptionHoverColor;
+	var themeOptionSecondsColor = localStorage.themeOptionSecondsColor;
+	var body = document.getElementsByTagName('body')[0];
+	body.style.cssText = "--basik-color : " + themeOptionBasikColor;
+	body.style.cssText += "--hover-color : " + themeOptionHoverColor;
+	body.style.cssText += "--seconds-color : " + themeOptionSecondsColor;
+
+
+
 	console.log("df");
 	var field_size = 3;
 	$('.field_size_minus').click(function() {
@@ -18,17 +29,19 @@ $(function () {
 	})
 
 	var game_mode = 1;
-	$('.mode_game_XO').css({"background-color":"#9EDBFC"});
-	$('.mode_game_XO').click(function() {
-		game_mode = 1;
-		$('.mode_game_XO').css({"background-color":"#9EDBFC"});
-		$('.mode_game_XOP').css({"background-color":"#79C8F2"});
+	var numGameMode = 3;
+
+	$('.mode_game_1').css({"background-color":themeOptionBasikColor});
+
+	$('.mode_game *').click(function(event) {
+		var resultModeGameOption = (this.classList[0]);
+		resultModeGameOption = resultModeGameOption.slice(-1);
+		game_mode = resultModeGameOption;
+
+		$('.mode_game_' + (((resultModeGameOption)%numGameMode)+1) + ', .mode_game_' + (((resultModeGameOption+1)%numGameMode)+1)).css({"background-color":themeOptionSecondsColor});
+		$('.mode_game_' + resultModeGameOption).css({"background-color":themeOptionBasikColor});
 	})
-	$('.mode_game_XOP').click(function() {
-		game_mode = 2;
-		$('.mode_game_XOP').css({"background-color":"#9EDBFC"});
-		$('.mode_game_XO').css({"background-color":"#79C8F2"});
-	})
+
 
 	$('a').click(function(){
 		$('.field_size_result').html(field_size + 'x' + field_size);
@@ -38,25 +51,24 @@ $(function () {
 		localStorage.mode_game = game_mode;
 	})
 
-	$('.reday_game_1').click(function() {
-		localStorage.field_size = 3;
-		localStorage.win_combination = 3;
-		localStorage.mode_game = 1;
-		$(location).attr('href', "..\\play\\play.html")
-	})
 
-	$('.reday_game_2').click(function() {
-		localStorage.field_size = 10;
-		localStorage.win_combination = 4;
-		localStorage.mode_game = 1;
-		$(location).attr('href', "..\\play\\play.html")
-	})
+	var readyGames = new Array();
+	for (let i=0; i<3; i++) {
+		readyGames[i] = new Array();
+	}
+	readyGames = [
+		[3, 3, 1],
+		[10, 4, 1],
+		[19, 5, 1]
+	];
 
-	$('.reday_game_3').click(function() {
-		localStorage.field_size = 19;
-		localStorage.win_combination = 5;
-		localStorage.mode_game = 1;
-		$(location).attr('href', "..\\play\\play.html")
+	$('.ready_game').click(function(event) {
+		var resultReadyGameOption = (this.classList[1]);
+		resultReadyGameOption = resultReadyGameOption.slice(-1);
+		localStorage.field_size = readyGames[resultReadyGameOption-1][0];
+	 	localStorage.win_combination = readyGames[resultReadyGameOption-1][1];;
+	 	localStorage.mode_game = readyGames[resultReadyGameOption-1][2];;
+	 	$(location).attr('href', "..\\play\\play.html");
 	})
 
 	$('.play').click(function() {

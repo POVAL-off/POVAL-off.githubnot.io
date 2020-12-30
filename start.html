@@ -15,10 +15,22 @@
 		var themeOptionBasikColor = localStorage.themeOptionBasikColor;
 		var themeOptionHoverColor = localStorage.themeOptionHoverColor;
 		var themeOptionSecondsColor = localStorage.themeOptionSecondsColor;
+
+		if (themeOptionBasikColor == undefined) {
+			localStorage.themeOptionBasikColor = "#63BDED";
+			localStorage.themeOptionHoverColor = "#7CCAF3";
+			localStorage.themeOptionSecondsColor = "#6BC2F1";
+
+			themeOptionBasikColor = localStorage.themeOptionBasikColor;
+			themeOptionHoverColor = localStorage.themeOptionHoverColor;
+			themeOptionSecondsColor = localStorage.themeOptionSecondsColor;
+		}
+
 		var body = document.getElementsByTagName('body')[0];
 		body.style.cssText = "--basik-color : " + themeOptionBasikColor;
 		body.style.cssText += "--hover-color : " + themeOptionHoverColor;
 		body.style.cssText += "--seconds-color : " + themeOptionSecondsColor;
+
 	</script>
 	<div class="all">
 		<header>

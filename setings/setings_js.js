@@ -35,6 +35,7 @@ $(function() {
 	themeColors[2][4] = "#3B3B3B";
 
 	for (let j=0; j<numThemeColors; j++) {
+		$('.theme_setings').append("<a href=\"#\" class=\"theme_option theme_option_" +  (j+1) +"\"> </a>")
 		$('.theme_option_' + (j+1)).css({"background-color" :  themeColors[1][j] , "border" : "0.5vh solid " + themeColors[0][j]});
 	}
 

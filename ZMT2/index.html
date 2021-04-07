@@ -4,8 +4,10 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<script src="http://localhost:35729/livereload.js"></script>
+
 	<link rel="stylesheet" href="style/styleMain.css">
 	<link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="style/styleHeader.css">
 
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
 	<script type="text/javascript" src="js/mainJs.js"></script>
@@ -13,7 +15,7 @@
 </head>
 <body>
 	<header>
-		<div id="logo">
+		<div id="logo" onclick="slowScroll('#top')">
 			<span>ZMT</span>
 		</div>
 
@@ -35,8 +37,8 @@
 		<h1>Закарпатский машинобудівний технікум</h1>
 		<h3>Вчись та досягай успіхів</h3>
 
-		<a href="#" class="scrollToIntro">Слово директора</a>
-		<a href="#" class="scrollToSpecialties">Спеціальності</a>
+		<a href="#" onclick="slowScroll('#intro')">Слово директора</a>
+		<a href="#" onclick="slowScroll('#specialties')">Спеціальності</a>
 	</div>
 
 	<div id="intro">
@@ -73,16 +75,16 @@
 
 	<div id="specialties">
 			<h2>Спеціальності</h2>
-			<div class="specialtie"><img src="img/specialties/programing.jpg" alt="Programing">
+			<div class="specialtie" onclick="return location.href = 'pages/specialties/programist.html'"><img src="img/specialties/programing.jpg" alt="Programing">
 				<span>Інженерія програмного забезпечення</span>
 			</div>
-			<div class="specialtie"><img src="img/specialties/build.png" alt="">
+			<div class="specialtie" onclick="return location.href = 'pages/specialties/builder.html'"><img src="img/specialties/build.png" alt="">
 				<span>Будівництво та експлуатація будівель та споруд</span>
 			</div>
-			<div class="specialtie"><img src="img/specialties/electric.jpg" alt="">
+			<div class="specialtie" onclick="return location.href = 'pages/specialties/electrician.html'"><img src="img/specialties/electric.jpg" alt="">
 				<span>Електроенергетика, електротехніка та електромеханіка</span>
 			</div>
-			<div class="specialtie"><img src="img/specialties/masinbuild.jpg" alt="">
+			<div class="specialtie" onclick="return location.href = 'pages/specialties/machine-builder.html'"><img src="img/specialties/masinbuild.jpg" alt="">
 				<span>Галузеве машинобудування</span>
 			</div>
 			 

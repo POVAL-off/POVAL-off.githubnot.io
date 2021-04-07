@@ -1,0 +1,121 @@
+@import url('https://fonts.googleapis.com/css2?family=Suez+One&display=swap');
+@import url('https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
+
+* {
+	padding: 0;
+	margin: 0;
+	text-decoration: none;
+	outline: none;
+}
+
+html, body{
+	width: 100%;
+	height: 100%;
+	font-family: 'Inter', sans-serif;
+}
+
+body::-webkit-scrollbar {
+  width: 0em;
+}
+
+header {
+	display: flex;
+	position: fixed;
+	justify-content: space-between;
+	background-color: #222;
+	width: 96%;
+	height: 10vh;
+	padding: 0 2%;
+	color: #fff;
+	border-bottom: 2px solid #333;
+	z-index: 100;
+}
+
+header #logo {
+	font-family: "Suez One", serif;
+	font-size: 2em;
+	line-height: 11vh;
+	cursor: pointer;
+}
+
+header .menu-toggle {
+	position: relative;
+	background: none;
+	border:none;
+	width: 30px;
+	outline: none;
+	cursor: pointer;
+	z-index: 500;
+	display: none;
+}
+
+.menu-toggle span {
+	display: block;
+	height: 4px;
+	background-color: #fff;
+	margin: 6px 0;
+}
+
+header #menu {
+	line-height: 100px;
+	padding-right: 50px;
+}
+
+header #menu * {
+	color: #fff;
+	text-decoration: none;
+	text-transform: uppercase;
+	font-weight: 550;
+	padding: 0 20px;
+	transition: .4s;
+}
+
+#menu a:hover {
+	color: #b2bec3;
+	text-decoration: underline;
+}
+
+@media (max-width: 1001px) {
+	header .menu-toggle {
+		display: block;
+	}
+
+	header .menu-toggle * {
+		transition: 0.3s;
+	}
+
+	header #menu {
+		position: fixed;
+		max-width: 500px;
+		height: 100vh;
+		background-color: #222;
+		right: -100%;
+		top: 0;
+		padding: 90px 20px;
+		transition: 0.4s;
+		line-height: 15vh;
+	}
+
+	header #menu * {
+		display: block;
+		margin: 5px 70px;
+		text-align: center;
+	}
+
+	#menu.active {
+		right: 0;
+	}
+	.menu-toggle.active span:nth-child(1) {
+		transform: rotate(45deg);
+		position: relative;
+		top: 10px;
+	}
+	.menu-toggle.active span:nth-child(2) {
+		opacity: 0;
+	}
+	.menu-toggle.active span:nth-child(3) {
+		transform: rotate(-45deg);
+		position: relative;
+		top: -10px;
+	}
+}

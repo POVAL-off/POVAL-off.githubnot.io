@@ -4,9 +4,3 @@ $(function() {
 		$('#menu').toggleClass('active');
 	})
 })
-
-function slowScroll(id) {
-	$('html, body').animate({
-		scrollTop: $(id).offset().top
-	},1000);
-}

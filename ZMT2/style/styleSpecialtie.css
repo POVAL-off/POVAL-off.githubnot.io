@@ -44,3 +44,20 @@ content > h4 {
 		font-size: 0.8em;
 	}
 }
+
+content > #test {
+	display: flex;
+	justify-content: center;
+}
+
+#test > a {
+	color: #fff;
+	padding: 2% 4%;
+	font-size: 1.2em;
+	border: 1px solid #222;
+	transition: 0.3s;
+}
+
+#test > a:hover {
+	background-color: #1117;
+}

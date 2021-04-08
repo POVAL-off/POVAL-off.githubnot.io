@@ -24,7 +24,7 @@ header {
 	justify-content: space-between;
 	background-color: #222;
 	width: 96%;
-	height: 10vh;
+	height: 8vh;
 	padding: 0 2%;
 	color: #fff;
 	border-bottom: 2px solid #333;
@@ -34,7 +34,7 @@ header {
 header #logo {
 	font-family: "Suez One", serif;
 	font-size: 2em;
-	line-height: 11vh;
+	line-height: 8vh;
 	cursor: pointer;
 }
 
@@ -57,7 +57,7 @@ header .menu-toggle {
 }
 
 header #menu {
-	line-height: 100px;
+	line-height: 8vh;
 	padding-right: 50px;
 }
 
@@ -91,7 +91,7 @@ header #menu * {
 		background-color: #222;
 		right: -100%;
 		top: 0;
-		padding: 90px 20px;
+		padding: 5vh 20px;
 		transition: 0.4s;
 		line-height: 15vh;
 	}
